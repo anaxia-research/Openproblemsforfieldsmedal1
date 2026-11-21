@@ -11,3 +11,7 @@ These Lean files go with Sections 18 and 19 of "The Riemann and Generalized Riem
 All three use Lean 4.33.1 and Mathlib commit `0df444a360eaa60ab8c11dca51a86af692955474`, the pins of L. Alpöge's project. That is a different toolchain from the `LiouvilleEnergy` library in this repository, so these files are kept outside its build. For every theorem, `#print axioms` reports only `propext`, `Classical.choice` and `Quot.sound`.
 
 Every file is conditional. Hypotheses H and W are assumed here, not proved. Code taken from L. Alpöge's project is marked in each file header, and its authorship is his.
+
+## Building L. Alpöge's project
+
+`fetch-and-build-alpoge.sh` downloads L. Alpöge's 14-part archive from its original host (alpo.ge), unpacks it, scans it for `sorry` and `axiom`, builds it, and runs `#print axioms` on `riemannHypothesis`. The archive itself is not copied into this repository: it is his work, published without a licence. The build needs about 60 GB of disk, and takes about 6 hours on 64 cores.
