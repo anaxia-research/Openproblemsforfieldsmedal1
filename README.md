@@ -21,5 +21,5 @@
 | :--- | :--- | :--- |
 | [`LiouvilleEnergy/`](LiouvilleEnergy) | Lean 4 project over Mathlib | `lake exe cache get && lake build` |
 | [`scripts/`](scripts) | axiom audit | `lake env lean scripts/Axioms.lean` |
-| [`julia/`](julia) | identities, constants, certificates | `julia --project=julia julia/energy_checks.jl` |
+| [`julia/`](julia) | identities, constants, certificates; the constants of the window theorem (gamma tail, balancing and optimality) in `window_certificates.jl` | `julia --project=julia julia/energy_checks.jl`, `julia --project=julia julia/window_certificates.jl` |
 | [`certificate/`](certificate) | weak-independence certificate (Python, FLINT/Arb) | `python3 certificate/verify.py …` |

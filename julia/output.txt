@@ -53,3 +53,27 @@ positive-weight bound > 0.6514: PASS   value [0.65141850292189736542231365915664
 two-frequency bound > 0.7244 (3721 frequencies, 3716 regular): PASS   value [0.72445959780354945892543005712377997 +/- 7.55e-36]
 failures: 0
 
+
+== julia window_certificates.jl
+== (1) gamma densities
+gamma lemma, delta = 1//2: c_delta > 0                             PASS  [0.0038977139194611429231431890353413681141251183032481243334224474153829958461 +/- 8.06e-77]
+    tau = 1.25, b = 1.0909090909090908
+    q = 512.1219410543154, sigma = 514.1219410543154, U_delta = 1.0
+gamma tail <= sigma^-k for 200 integers U >= U_delta (delta = 1//2) PASS  max tail*sigma^k = 2.608e-08
+gamma lemma, delta = 1//1: c_delta > 0                             PASS  [0.0093257502326202339965135219257928825534414693582382832402072643145418539858 +/- 7.85e-77]
+    tau = 1.5, b = 1.1428571428571428
+    q = 213.461511945649, sigma = 215.461511945649, U_delta = 1.0
+gamma tail <= sigma^-k for 200 integers U >= U_delta (delta = 1//1) PASS  max tail*sigma^k = 3.411e-09
+gamma lemma, delta = 1//4: c_delta > 0                             PASS  [0.0013382845598178876264354346926811826134092172574690094365839048956948914698 +/- 5.27e-77]
+    tau = 1.125, b = 1.0526315789473684
+    q = 1493.4507009578563, sigma = 1495.4507009578563, U_delta = 1.0
+gamma tail <= sigma^-k for 200 integers U >= U_delta (delta = 1//4) PASS  max tail*sigma^k = 4.361e-08
+== (2) balancing lemma, exact arithmetic at x = 2^64, eps = 1/8
+z <= 26 x^(1/2+(C+21/8)eps) on 1600 exact instances, C = 0..3      PASS  max ratio 0.3077
+optimality (2B/Q)^2 >= 8 x^(1+eps) on the same instances           PASS  min ratio 1.1257
+26 <= x^(3 eps/8) at x = 2^128, eps = 1/8 (threshold of the last claim) PASS  2^6 = 64
+== (2') exponent bookkeeping, exact rationals
+each summand of B/Q is <= its factor times x^(1/2+13 eps/8)        PASS  factors 2, 2, 4, 2; sum 10
+2*10 + 4/3 <= 22 and 4 + 22 = 26                                   PASS  exact
+13/8 + 1 = 21/8 (division by s >= x^-eps)                          PASS  exact
+failures: 0
